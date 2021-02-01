@@ -1,2 +1,2 @@
-# commit-spellcheck
+# commit-spell
 [WIP]
