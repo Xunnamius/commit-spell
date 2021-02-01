@@ -1,0 +1,2 @@
+# commit-spellcheck
+[WIP]
