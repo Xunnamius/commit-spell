@@ -1,0 +1,12 @@
+*.ignore
+*.ignore.*
+ignore.*
+/dist
+/build
+/.vscode
+/.vercel
+/.env
+/external-scripts/bin
+/next-env.d.ts
+/node_modules
+/coverage
