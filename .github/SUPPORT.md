@@ -45,8 +45,7 @@ contribution 🎉, your efforts are greatly appreciated! 🙌🏿
   guidelines
 - Issues that go for an extended period without activity are subject to closure
 
-[1]:
-  https://isitmaintained.com/badge/resolution/Xunnamius/commit-spell.svg
+[1]: https://isitmaintained.com/badge/resolution/Xunnamius/commit-spell.svg
 [2]:
   https://isitmaintained.com/project/Xunnamius/commit-spell
   'Average time to resolve an issue'

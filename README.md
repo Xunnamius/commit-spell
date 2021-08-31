@@ -20,12 +20,10 @@
 
 # commit-spell
 
-`commit-spell` unites Atom's
-[multi-platform spellchecker](https://www.npmjs.com/package/spellchecker)
-(bindings for Hunspell, Windows Spell Check API, and NSSpellChecker), VSCode's
-[Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
-dictionaries, custom local and user dictionaries, and words from your
-repository's commit history to spellcheck your commit messages as you craft
+`commit-spell` unites Atom's [multi-platform spellchecker][2] (bindings for
+Hunspell, Windows Spell Check API, and NSSpellChecker), VSCode's [Code Spell
+Checker][3] dictionaries, custom local and user dictionaries, and words from
+your repository's commit history to spellcheck your commit messages as you craft
 them.
 
 ## Install
@@ -72,12 +70,10 @@ exhibit the [dual package hazard][hazard].
 
 ## Usage
 
-> [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) is
-> required to run `commit-spell`.
+> [`git`][4] is required to run `commit-spell`.
 
 `commit-spell` can be run by hand—where the current working directory is the
-root of your repository—or as part of a
-[commit-msg git hook](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks#_committing_workflow_hooks):
+root of your repository—or as part of a [commit-msg git hook][5]:
 
 ```bash
 npx commit-spell
@@ -85,9 +81,8 @@ npx commit-spell
 
 When run, it looks for a `<current working directory>/.git/COMMIT_EDITMSG` file
 and checks its (utf-8) contents for spelling errors. In addition to the
-platform-specific spellchecker and words in the
-[text-extensions](https://www.npmjs.com/package/text-extensions) dictionary, a
-word can be whitelisted by adding it to one of the following:
+platform-specific spellchecker and words in the [text-extensions][6] dictionary,
+a word can be whitelisted by adding it to one of the following:
 
 - `<current working directory>/.spellcheckignore` or
   `<user home directory>/.config/_spellcheckignore` on a new line
@@ -104,8 +99,7 @@ all potential typos.
 
 ### Example
 
-This repository [uses itself to spellcheck its own commits](./.husky/commit-msg)
-via [husky](https://www.npmjs.com/package/husky).
+This repository [uses itself to spellcheck its own commits][7] via [husky][8].
 
 ### Importing as a Module
 
@@ -206,3 +200,12 @@ information.
   https://webpack.js.org/guides/tree-shaking/#mark-the-file-as-side-effect-free
 [tree-shaking]: https://webpack.js.org/guides/tree-shaking
 [1]: https://github.com/yargs/yargs
+[2]: https://www.npmjs.com/package/spellchecker
+[3]:
+  https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+[4]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+[5]:
+  https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks#_committing_workflow_hooks
+[6]: https://www.npmjs.com/package/text-extensions
+[7]: ./.husky/commit-msg
+[8]: https://www.npmjs.com/package/husky
