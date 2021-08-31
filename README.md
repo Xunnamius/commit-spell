@@ -34,7 +34,7 @@ them.
 npm install --save-dev commit-spell
 ```
 
-<details><summary><strong>[additional details]</strong></summary>
+<details><summary>[additional details]</summary>
 
 > Note: **you probably don't need to read through this!** This information is
 > primarily useful for those attempting to bundle this package or for people who
