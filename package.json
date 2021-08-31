@@ -33,8 +33,7 @@
   "module": "./dist/esm/index.mjs",
   "types": "./dist/types/src/index.d.ts",
   "bin": {
-    "commit-spell": "./dist/cli.js",
-    "gac": "./dist/cli.js"
+    "commit-spell": "./dist/cli.js"
   },
   "files": [
     "/dist",
