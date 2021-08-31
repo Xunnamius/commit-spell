@@ -86,11 +86,11 @@ a word can be whitelisted by adding it to one of the following:
 
 - `<current working directory>/.spellcheckignore` or
   `<user home directory>/.config/_spellcheckignore` on a new line
-- `<current working directory>/package.json` as a key under `dependencies`,
-  `devDependencies`, `peerDependencies`, or `scripts`
+- `<current working directory>/package.json` as a key under _dependencies_,
+  _devDependencies_, _peerDependencies_, or _scripts_
 - `<current working directory>/.vscode/settings.json` or
   `<user home directory>/.config/Code/User/settings.json` as an element of
-  `cSpell.words`, `cSpell.userWords`, or `cSpell.ignoreWords`
+  _cSpell.words_, _cSpell.userWords_, or _cSpell.ignoreWords_
 - Any word appearing in the output of `git log --format="%B" HEAD~1`
 
 Additionally, you can use `--help` to get help text output, `--version` to get
