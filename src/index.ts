@@ -75,7 +75,7 @@ export function configureProgram(program?: Program): Context {
   const finalProgram = program || yargs();
 
   finalProgram
-    .scriptName('gac')
+    .scriptName('commit-spell')
     .usage(`$0\n\nChecks the ${GIT_COMMITMSG_PATH} file for spelling errors.`)
     .options({
       silent: {
