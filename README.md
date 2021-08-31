@@ -75,7 +75,8 @@ exhibit the [dual package hazard][hazard].
 > [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) is
 > required to run `commit-spell`.
 
-`commit-spell` can be run standalone or as part of a
+`commit-spell` can be run by hand—where the current working directory is the
+root of your repository—or as part of a
 [commit-msg git hook](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks#_committing_workflow_hooks):
 
 ```bash
@@ -204,25 +205,4 @@ information.
 [side-effects-key]:
   https://webpack.js.org/guides/tree-shaking/#mark-the-file-as-side-effect-free
 [tree-shaking]: https://webpack.js.org/guides/tree-shaking
-[npm-v7-bc]:
-  https://github.blog/2020-10-13-presenting-v7-0-0-of-the-npm-cli/#user-content-breaking-changes
-[10]: https://conventionalcommits.org
 [1]: https://github.com/yargs/yargs
-[2]: #root
-[3]: #omit
-[4]: https://github.com/Xunnamius
-[5]: https://github.com/conventional-changelog/conventional-changelog
-[6]: #full
-[7]: https://dev.to/cbillowes/why-i-create-atomic-commits-in-git-kfi
-[8]:
-  https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---no-verify
-[9]:
-  https://github.com/Xunnamius/conventional-changelog-projector/blob/bde3ed43fd30aae4657c5b27f9e14a20115a903d/defaults.js#L124
-[11]:
-  https://www.conventionalcommits.org/en/v1.0.0/#commit-message-with--to-draw-attention-to-breaking-change
-[12]: https://en.wikipedia.org/wiki/WYSIWYG
-[13]: https://code.visualstudio.com/docs/editor/versioncontrol#_commit
-[14]:
-  https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging#_staging_patches
-[15]:
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
