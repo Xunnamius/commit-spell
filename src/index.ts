@@ -27,7 +27,6 @@ debug(`homeDir: ${homeDir}`);
 export const GIT_COMMITMSG_PATH = './.git/COMMIT_EDITMSG';
 export const LOCAL_SPELLCHECKIGNORE_PATH = './.spellcheckignore';
 export const LOCAL_VSCODE_SETTINGS_PATH = './.vscode/settings.json';
-// ? Home directory is prepended to the following
 export const GLOBAL_SPELLCHECKIGNORE_PATH = `${homeDir}/.config/_spellcheckignore`;
 export const GLOBAL_VSCODE_SETTINGS_PATH = `${homeDir}/.config/Code/User/settings.json`;
 
