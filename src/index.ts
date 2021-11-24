@@ -21,7 +21,15 @@ export type Context = {
 const debug = debugFactory(`${pkgName}:parse`);
 const { readFile } = fs;
 
+const homeDir = homedir();
+debug(`homeDir: ${homeDir}`);
+
 export const GIT_COMMITMSG_PATH = './.git/COMMIT_EDITMSG';
+export const LOCAL_SPELLCHECKIGNORE_PATH = './.spellcheckignore';
+export const LOCAL_VSCODE_SETTINGS_PATH = './.vscode/settings.json';
+// ? Home directory is prepended to the following
+export const GLOBAL_SPELLCHECKIGNORE_PATH = `${homeDir}/.config/_spellcheckignore`;
+export const GLOBAL_VSCODE_SETTINGS_PATH = `${homeDir}/.config/Code/User/settings.json`;
 
 const tryReadFile = async (path: string) => {
   try {
@@ -106,7 +114,6 @@ export function configureProgram(program?: Program): Context {
 
       const finalArgv = await finalProgram.parse(argv || []);
       const lastCommitMsg = await tryReadFile(GIT_COMMITMSG_PATH);
-      const homeDir = homedir();
 
       /* eslint-disable import/no-unresolved */
       const {
@@ -129,16 +136,15 @@ export function configureProgram(program?: Program): Context {
       /* eslint-enable import/no-unresolved */
 
       debug(`lastCommitMsg: ${lastCommitMsg}`);
-      debug(`homeDir: ${homeDir}`);
 
       const ignoreWords = Array.from(
         new Set(
           [
             ...(await Promise.all([
-              tryReadFile('./.spellcheckignore').then(asText),
-              tryReadFile(`${homeDir}/.config/_spellcheckignore`).then(asText),
-              tryReadFile('./.vscode/settings.json').then(asCSpellJson),
-              tryReadFile(`${homeDir}/.config/Code/User/settings.json`).then(asCSpellJson)
+              tryReadFile(LOCAL_SPELLCHECKIGNORE_PATH).then(asText),
+              tryReadFile(GLOBAL_SPELLCHECKIGNORE_PATH).then(asText),
+              tryReadFile(LOCAL_VSCODE_SETTINGS_PATH).then(asCSpellJson),
+              tryReadFile(GLOBAL_VSCODE_SETTINGS_PATH).then(asCSpellJson)
             ])),
             ...textExtensions,
             // ? Popular contractions
@@ -188,7 +194,9 @@ export function configureProgram(program?: Program): Context {
         for (const typo of finalArgv.showAll ? typos : typos.slice(0, 5)) {
           const corrections = spellcheck.getCorrectionsForMisspelling(typo);
           const suggestion = corrections.length
-            ? ` (did you mean ${corrections.slice(0, 5).join(', ')}?)`
+            ? ` (did you mean ${corrections
+                .slice(0, finalArgv.showAll ? 10 : 5)
+                .join(', ')}?)`
             : '';
 
           warn(`${typo}${suggestion}`);
