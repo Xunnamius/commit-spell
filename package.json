@@ -1,6 +1,6 @@
 {
   "name": "commit-spell",
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "description": "Unites Atom's spellchecker, VSCode's Code Spell Checker dictionaries, custom local and user dictionaries, and words from your repository's commit history to spellcheck your commit messages as you craft them",
   "keywords": [
     "lint",
