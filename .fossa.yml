@@ -1,0 +1,6 @@
+version: 3
+project:
+  name: commit-spell
+targets:
+  only:
+    - type: npm
